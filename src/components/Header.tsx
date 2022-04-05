@@ -2,14 +2,16 @@ import { Icon } from '@rneui/base';
 import React from 'react'
 import { View, Text, StyleSheet } from 'react-native'
 import { colors, parameters } from '../global';
+import { useTailwind } from 'tailwind-rn';
 
 interface Props {
   title: string;
 }
 
 const Header = ({ title }: Props) => {
+  const tailwind = useTailwind();
   return (
-    <View style={styles.header}>
+    <View style={[tailwind('flex-row items-center'), styles.header]}>
       <View style={{ marginLeft: 20 }}>
         <Icon
           name="arrow-left"
@@ -19,8 +21,8 @@ const Header = ({ title }: Props) => {
           onPress={() => { }}
         />
       </View>
-      <View style={{ marginLeft: 30 }}>
-        <Text style={styles.headerTxt}>{title}</Text>
+      <View style={tailwind('ml-6')}>
+        <Text style={[tailwind('text-2xl font-bold text-white')]}>{title}</Text>
       </View>
     </View>
   )
@@ -28,15 +30,8 @@ const Header = ({ title }: Props) => {
 
 const styles = StyleSheet.create({
   header: {
-    flexDirection: 'row',
     backgroundColor: colors.buttons,
     height: parameters.headerHeight,
-    alignItems: 'center',
-  },
-  headerTxt: {
-    color: colors.headerTxt,
-    fontSize: 22,
-    fontWeight: 'bold',
   },
 });
 
