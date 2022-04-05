@@ -5,6 +5,7 @@ import Header from '../../components/Header';
 import * as Animatable from 'react-native-animatable';
 import { Icon, Button, SocialIcon } from '@rneui/base';
 import { colors } from '../../global';
+import SocialMediaButtons from '../../components/SocialMediaButtons';
 
 const SignIn = () => {
   const tailwind = useTailwind();
@@ -82,24 +83,18 @@ const SignIn = () => {
         <Text style={tailwind('text-black text-2xl')}>OR</Text>
       </View>
 
-      <View style={tailwind('items-center mx-4 mt-4')}>
-        <SocialIcon 
-          title='Sign In With Facebook'
-          button
-          type='facebook'
-          style={[tailwind('rounded-xl h-16 w-96'),]}
-          onPress={ () => {}}
-        />
-      </View>
-      <View style={tailwind('items-center mx-4 mt-4')}>
-        <SocialIcon 
-          title='Sign In With Google'
-          button
-          type='google'
-          style={[tailwind('rounded-xl h-16 w-96'), {}]}
-          onPress={ () => {}}
-        />
-      </View>
+      <SocialMediaButtons 
+        title='Sign In With Google' 
+        type='facebook'
+        viewStyle={tailwind('items-center mx-4 mt-4')} 
+        style={[tailwind('rounded-xl h-16 w-96'),]}      
+      />
+      <SocialMediaButtons 
+        title='Sign In With Facebook' 
+        type='google'
+        viewStyle={tailwind('items-center mx-4 mt-4')} 
+        style={[tailwind('rounded-xl h-16 w-96'),]}      
+      />
 
       <View style={tailwind('mx-4 mt-4')}>
         <Text style={tailwind('text-grey3 text-xl')}>New on XpressFood ?</Text>
