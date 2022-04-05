@@ -14,3 +14,7 @@ export const colors={
 export const parameters = {
   headerHeight: 50,
 }
+
+export const title = {
+  color: '#ff8c52'
+}

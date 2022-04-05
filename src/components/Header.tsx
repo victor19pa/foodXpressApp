@@ -6,15 +6,16 @@ import { useTailwind } from 'tailwind-rn';
 
 interface Props {
   title: string;
+  type: string;
 }
 
-const Header = ({ title }: Props) => {
+const Header = ({ title, type }: Props) => {
   const tailwind = useTailwind();
   return (
     <View style={[tailwind('flex-row items-center bg-buttons'), {height: parameters.headerHeight}]}>
       <View style={tailwind('ml-4')}>
         <Icon
-          name="arrow-left"
+          name={type}
           size={28}
           color={colors.cardbackground}
           type="material-community"

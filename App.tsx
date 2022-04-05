@@ -1,24 +1,28 @@
 import React from 'react'
-import { View, StatusBar, StyleSheet } from 'react-native'
-import { Header } from './src/components'
+import { View, StatusBar, StyleSheet, ScrollView, SafeAreaView, Text } from 'react-native'
 import { colors } from './src/global'
 import { TailwindProvider } from 'tailwind-rn';
 import utilities from './tailwind.json';
-import {useTailwind} from 'tailwind-rn';
+import { useTailwind } from 'tailwind-rn';
+import Header from './src/components/Header';
+import SignIn from './src/screens/authScreens/SignIn';
 
 const App = () => {
   const tailwind = useTailwind();
 
   return (
-    <TailwindProvider utilities={utilities}>
-      <View style={tailwind('flex-1')}>
+    <SafeAreaView style={tailwind('flex-1')}>
+      <TailwindProvider utilities={utilities}>
+
         <StatusBar
           barStyle='light-content'
           backgroundColor={colors.statusbar}
         />
-        <Header title='MY ACCOUNT' />
-      </View>
-    </TailwindProvider>
+        <SignIn />
+
+      </TailwindProvider>
+    </SafeAreaView>
+
   )
 }
 
