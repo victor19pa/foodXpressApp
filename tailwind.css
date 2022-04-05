@@ -1,9 +1,13 @@
+.ml-6 {
+  margin-left: 1.5rem
+}
+
 .ml-8 {
   margin-left: 2rem
 }
 
-.ml-6 {
-  margin-left: 1.5rem
+.ml-4 {
+  margin-left: 1rem
 }
 
 .flex-row {
@@ -14,9 +18,9 @@
   align-items: center
 }
 
-.text-xl {
-  font-size: 1.25rem;
-  line-height: 1.75rem
+.bg-buttons {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 140 82 / var(--tw-bg-opacity))
 }
 
 .text-2xl {

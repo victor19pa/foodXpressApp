@@ -11,8 +11,8 @@ interface Props {
 const Header = ({ title }: Props) => {
   const tailwind = useTailwind();
   return (
-    <View style={[tailwind('flex-row items-center'), styles.header]}>
-      <View style={{ marginLeft: 20 }}>
+    <View style={[tailwind('flex-row items-center bg-buttons'), {height: parameters.headerHeight}]}>
+      <View style={tailwind('ml-4')}>
         <Icon
           name="arrow-left"
           size={28}
@@ -27,12 +27,5 @@ const Header = ({ title }: Props) => {
     </View>
   )
 }
-
-const styles = StyleSheet.create({
-  header: {
-    backgroundColor: colors.buttons,
-    height: parameters.headerHeight,
-  },
-});
 
 export default Header

@@ -1,12 +1,17 @@
 {
+	"ml-6": {
+		"style": {
+			"marginLeft": 24
+		}
+	},
 	"ml-8": {
 		"style": {
 			"marginLeft": 32
 		}
 	},
-	"ml-6": {
+	"ml-4": {
 		"style": {
-			"marginLeft": 24
+			"marginLeft": 16
 		}
 	},
 	"flex-row": {
@@ -19,10 +24,10 @@
 			"alignItems": "center"
 		}
 	},
-	"text-xl": {
+	"bg-buttons": {
 		"style": {
-			"fontSize": 20,
-			"lineHeight": 28
+			"--tw-bg-opacity": 1,
+			"backgroundColor": "rgb(255 140 82 / var(--tw-bg-opacity))"
 		}
 	},
 	"text-2xl": {
