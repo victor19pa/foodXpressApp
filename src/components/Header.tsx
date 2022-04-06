@@ -7,9 +7,10 @@ import { useTailwind } from 'tailwind-rn';
 interface Props {
   title: string;
   type: string;
+  navigation: any;
 }
 
-const Header = ({ title, type }: Props) => {
+const Header = ({ title, type, navigation }: Props) => {
   const tailwind = useTailwind();
   return (
     <View style={[tailwind('flex-row items-center bg-buttons'), {height: parameters.headerHeight}]}>
@@ -19,7 +20,8 @@ const Header = ({ title, type }: Props) => {
           size={28}
           color={colors.cardbackground}
           type="material-community"
-          onPress={() => { }}
+          onPress={() => { navigation.goBack()}}
+          activeOpacity={1}
         />
       </View>
       <View style={tailwind('ml-6')}>

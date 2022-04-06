@@ -7,7 +7,7 @@ import { Icon, Button, SocialIcon } from '@rneui/base';
 import { colors } from '../../global';
 import SocialMediaButtons from '../../components/SocialMediaButtons';
 
-const SignIn = () => {
+const SignIn = ({ navigation }: any) => {
   const tailwind = useTailwind();
   const [textInput2Focus, setTextInput2Focus] = useState(false);
 
@@ -16,7 +16,7 @@ const SignIn = () => {
 
   return (
     <View style={tailwind('flex-1')}>
-      <Header title='MY ACCOUNT' type='chevron-left' />
+      <Header title='MY ACCOUNT' type='chevron-left' navigation={navigation}/>
       <View style={[tailwind('ml-4 mt-3'),]}>
         <Text style={tailwind('text-buttons text-2xl font-bold')}>Sign-in</Text>
       </View>

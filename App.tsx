@@ -1,30 +1,26 @@
+import 'react-native-gesture-handler';
 import React from 'react'
-import { View, StatusBar, StyleSheet, ScrollView, SafeAreaView, Text } from 'react-native'
+import { LogBox, StatusBar } from 'react-native'
 import { colors } from './src/global'
 import { TailwindProvider } from 'tailwind-rn';
 import utilities from './tailwind.json';
 import { useTailwind } from 'tailwind-rn';
-import Header from './src/components/Header';
-import SignIn from './src/screens/authScreens/SignIn';
-import SignInWelcome from './src/screens/authScreens/SignInWelcome';
+import RootNavigator from './src/navigation/RootNavigator';
 
 const App = () => {
-  const tailwind = useTailwind();
-
+  LogBox.ignoreLogs([
+    "[react-native-gesture-handler] Seems like you're using an old API with gesture components, check out new Gestures system!",
+    'Non-serializable values were found in the navigation state',
+    "Warning: Can't perform a React state update on an unmounted component",
+  ]);
   return (
-    // <SafeAreaView style={tailwind('flex-1')}>
       <TailwindProvider utilities={utilities}>
-
         <StatusBar
           barStyle='light-content'
           backgroundColor={colors.statusbar}
         />
-        {/* <SignIn /> */}
-        <SignInWelcome/>
-
+        <RootNavigator />
       </TailwindProvider>
-    // </SafeAreaView>
-
   )
 }
 
