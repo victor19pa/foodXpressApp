@@ -11,11 +11,11 @@ const SignIn = () => {
   const tailwind = useTailwind();
   const [textInput2Focus, setTextInput2Focus] = useState(false);
 
-  const txtInput1 = useRef(1);
-  const txtInput2 = useRef(1);
+  const txtInput1 = useRef<TextInput>(null);
+  const txtInput2 = useRef<TextInput>(null);
 
   return (
-    <View style={tailwind('h-full')}>
+    <View style={tailwind('flex-1')}>
       <Header title='MY ACCOUNT' type='chevron-left' />
       <View style={[tailwind('ml-4 mt-3'),]}>
         <Text style={tailwind('text-buttons text-2xl font-bold')}>Sign-in</Text>
@@ -80,7 +80,7 @@ const SignIn = () => {
       </View>
 
       <View style={tailwind('items-center mt-4 mb-8')}>
-        <Text style={tailwind('text-black text-2xl')}>OR</Text>
+        <Text style={tailwind('text-grey3 text-2xl')}>OR</Text>
       </View>
 
       <SocialMediaButtons 
