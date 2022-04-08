@@ -1,6 +1,6 @@
 import { Icon } from '@rneui/base';
 import React from 'react'
-import { View, Text, StyleSheet } from 'react-native'
+import { View, Text } from 'react-native'
 import { colors, parameters } from '../global';
 import { useTailwind } from 'tailwind-rn';
 

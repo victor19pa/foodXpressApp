@@ -1,18 +1,17 @@
 import React, { useRef, useState } from 'react'
 import { View, Text, TextInput } from 'react-native'
 import { useTailwind } from 'tailwind-rn';
-import Header from '../../components/Header';
+import { Header, SocialButtons } from '../../components/index';
 import * as Animatable from 'react-native-animatable';
-import { Icon, Button, SocialIcon } from '@rneui/base';
+import { Icon, Button } from '@rneui/base';
 import { colors } from '../../global';
-import SocialMediaButtons from '../../components/SocialMediaButtons';
 
 const SignIn = ({ navigation }: any) => {
   const tailwind = useTailwind();
   const [textInput2Focus, setTextInput2Focus] = useState(false);
 
-  const txtInput1 = useRef<TextInput>(null);
-  const txtInput2 = useRef<TextInput>(null);
+  const txtEmail = useRef<TextInput>(null);
+  const txtPassword = useRef<TextInput>(null);
 
   return (
     <View style={tailwind('flex-1')}>
@@ -31,7 +30,7 @@ const SignIn = ({ navigation }: any) => {
           <TextInput
             style={[tailwind('mx-4 mb-4 border-CardComment rounded-xl pl-4'), { borderWidth: 1, }]}
             placeholder='Email'
-            ref = {txtInput1}
+            ref = {txtEmail}
           />
         </View>
         
@@ -43,11 +42,10 @@ const SignIn = ({ navigation }: any) => {
               type='material'
             />
           </Animatable.View>
-
           <TextInput
             style={{ width: '80%'}}
             placeholder='Password'
-            ref={txtInput2}
+            ref={txtPassword}
             onFocus= { () => {
               setTextInput2Focus(false)
             }}
@@ -64,14 +62,14 @@ const SignIn = ({ navigation }: any) => {
             />
           </Animatable.View>
         </View>
-
       </View>
 
-      <View style={tailwind('mx-4 my-6')}>
+      <View style={tailwind(' my-6')}>
         <Button 
           title='SIGN IN'
           buttonStyle={[tailwind('bg-buttons content-center justify-center rounded-xl h-12 mx-4 '),  { }]}
           titleStyle={tailwind('text-white text-2xl font-bold items-center justify-center')}
+          onPress={() => navigation.navigate('HomeScreen')}
         />
       </View>
 
@@ -83,13 +81,13 @@ const SignIn = ({ navigation }: any) => {
         <Text style={tailwind('text-grey3 text-2xl')}>OR</Text>
       </View>
 
-      <SocialMediaButtons 
+      <SocialButtons 
         title='Sign In With Google' 
         type='facebook'
         viewStyle={tailwind('items-center mx-4 mt-4')} 
         style={[tailwind('rounded-xl h-16 w-96'),]}      
       />
-      <SocialMediaButtons 
+      <SocialButtons 
         title='Sign In With Facebook' 
         type='google'
         viewStyle={tailwind('items-center mx-4 mt-4')} 
